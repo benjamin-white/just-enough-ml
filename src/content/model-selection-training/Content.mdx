@@ -1,0 +1,47 @@
+import ModelSummary from '@/ModelSummary'
+import LinearRegression from '@/MLExamples/LinearRegression/LinearRegression'
+
+**_TODO:_**  
+_Come back and rework this when I actually have an appreciation for what's going on. For now it's just a collection of thoughts and observations!_
+
+Selecting a model overlaps with data preparation, as ultimately data may need to be prepared in different ways to work with different models. There is an iterative exploratory process that may involve _evaluate, test and repeat_ when finding the most appropriate model to use.
+
+#### Categories of model
+
+- Supervised
+  - Classification
+  - Regression / Forecasting
+- Semi-supervised (the same as Supervised but involves an amount of unlabelled data)
+- Unsupervised
+  - Clustering
+  - Dimension reduction
+- Reinforcement (trial and error learning)
+
+### Most commonly uses types of model ([reference](https://blogs.sas.com/content/subconsciousmusings/2020/12/09/machine-learning-algorithm-use/))
+
+- Naïve Bayes Classifier Algorithm (Supervised Learning - Classification)
+- K Means Clustering Algorithm (Unsupervised Learning - Clustering)
+- Support Vector Machine Algorithm (Supervised Learning - Classification)
+- Linear Regression (Supervised Learning - Regression)
+- Logistic Regression (Sigmoid) (Supervised learning - Regression / Classification)
+- Artificial Neural Networks (Reinforcement Learning)
+- Decision Trees (Supervised Learning - Classification / Regression)
+- Random Forests (Supervised Learning - Classification / Regression)
+- K-Nearest Neighbours (Supervised Learning)
+
+---
+
+**Linear Regression example**
+
+A simple Linear Regression example using a car dataset and the aim of correlating MPG with horsepower.
+
+<LinearRegression>
+  **Scatterplot of the available data points**
+  <LinearRegression.ScatterPlot />
+  **Summary of the regression model we might use**
+  <LinearRegression.Summary />
+  **Running this model with 50 epochs**
+  <LinearRegression.Prediction />
+  Clearly the relationship is not linear! A Logistic Regression is likely to
+  yield better results here.
+</LinearRegression>

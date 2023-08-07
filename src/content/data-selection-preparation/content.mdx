@@ -1,0 +1,46 @@
+import DatasetHead from '@/DatasetHead'
+
+**_TODO:_**  
+_Come back and rework this when I actually have an appreciation for what's going on. For now it's just a collection of thoughts and observations!_
+
+## Some reasons to do data preparation
+
+- Machine learning algorithms require data to be numbers.
+- Some machine learning algorithms impose requirements on the data.
+- Statistical noise and errors in the data may need to be corrected.
+- Complex nonlinear relationships may be teased out of the data.
+
+> Data wrangling, which is also commonly referred to as data munging, transformation, manipulation, janitor work, etc. can be a painstakingly laborious process. &mdash; Page v, Data Wrangling with R, 2016.
+
+## Data preparation tasks
+
+Some of these or all may need to be performed, depending on the raw data we are dealign with.
+
+- **Data cleaning** involves identifying and correcting mistakes or errors in the data.
+- **Feature selection** identifies those input variables that are most relevant to the task.
+- **Data Transforms** involves changing the scale or distribution of variables.
+- **Feature Engineering** is to derive new variables from the pre-existing data.
+- **Dimensionality Reduction** creates compact projections of the data.
+
+## Feature identification
+
+Given the below dataset we might want to be able to predict a film's `rating` based on some other metrics(s). In the this scenario the `rating` is our _target_ and the other metric(s) would be our feature(s). So the first step here is to determine which column(s), if any, have a strong correlation with the rating. This would be part of performing the _Exploratory Data Analysis_.
+
+However from the below, and knowing the dataset total is 250 films it seems unlikely we could find a meaningful and strong correlation!
+
+<DatasetHead fileName="imdb-top-250-movies.csv" dropColumns={['Description']} />
+
+We could test the correlation of features to the target using **Linear Regression**, and we would test the effectiveness with **Loss Functions** such as **Mean Squared Error**, **Coefficient of Determination (R<sup>2</sup>)** or others.
+
+#### Mean Squared Error
+
+$$MSE=\frac{1}{n}\sum_{i=1}^{n}(y_i-\hat{y_i})^2$$
+
+#### Coefficient of Determination, R<sup>2</sup>
+
+$$R^2=1-\frac{SSE}{SST}$$
+
+_SSE: Sum of Squared Errors_  
+_SST: Sum of Total Squares_
+
+Cleaning the data may involve analysing **residuals** and removing **outliers** from the raw data.

@@ -1,0 +1,11 @@
+Assuming we have a well defined problem and anticipated solution, we need to validate if this is something that can be solved and additionally if the cost to implement would justify the benefit.
+
+## From the perspective of a ML implementation that means answering:
+
+- Seems obvious to check but could a pre-trained model be deployed instead? Using a pre-trained model would save a considerable time investment and potentially be of higher quality. If a suitable model isn't available consider if [transfer learning](https://www.seldon.io/transfer-learning) is an option instead.
+
+- Is there training data available for a ML model? The available data would need to satisfy both factors of quality and quantity. As part of considering data quality we should consider if there are any biases in the data and if so would it be possible to mitigate them? If we cannot ensure the training data source, then inevitably this problem cannot be solved with the creation of a ML model.
+
+- The next step would be to define the desired output and what the dataset can support. Will the output be a continuous prediction or discrete quanta (classification). Do we have labelled data to support supervised learning or will unsupervised or reinforcement learning be needed? Answering these questions will support any subsequent [Exploratory Data Analysis](/data-selection-preparation).
+
+- Definition of success. Set out what positive results look like and how the output can be evaluated. A model may perform well on test data but fail on real-world data, and this should be identified before deployment.
